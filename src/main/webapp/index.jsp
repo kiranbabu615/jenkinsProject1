@@ -508,6 +508,95 @@
         .text-center {
             text-align: center
         }
+
+    /* Modern storefront refresh */
+    :root {
+      --bg:#f7f8fc; --primary:#171a2b; --accent:#635bff; --muted:#74798c;
+      --card:#fff; --surface:#eef0f8; --success:#16a36a; --radius:18px; --container:1240px;
+    }
+    body { background:var(--bg); color:var(--primary); }
+    header { background:rgba(255,255,255,.9); border-bottom:1px solid #e9eaf2; backdrop-filter:blur(16px); }
+    .header-inner { padding:16px 0; }
+    .brand { font-size:24px; letter-spacing:-.7px; }
+    .brand .accent { color:var(--accent); }
+    nav.main-nav li a { border-radius:999px; padding:10px 13px; transition:.2s; }
+    nav.main-nav li a:hover { background:#eeedff; color:var(--accent); }
+    .search { background:#f3f4f9; border:1px solid #eceef5; min-width:260px; padding:11px 15px; }
+    .icon-btn { transition:color .2s, transform .2s; }
+    .icon-btn:hover { color:var(--accent); transform:translateY(-1px); }
+    .cart { background:#f3f4f9; padding:11px 14px; }
+    .cart-count { background:var(--accent); }
+    .hero {
+      min-height:490px; margin:22px auto 0; max-width:calc(var(--container) - 0px);
+      border-radius:28px; overflow:hidden; text-align:left; justify-content:flex-start;
+      background:linear-gradient(90deg,rgba(15,18,37,.88) 0%,rgba(15,18,37,.58) 54%,rgba(15,18,37,.12) 100%),
+      url('https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=1600&q=85') center/cover no-repeat;
+    }
+    .hero .container { padding:58px 64px; }
+    .hero h1 { max-width:680px; font-size:clamp(36px,4.5vw,60px); line-height:1.08; letter-spacing:-2px; }
+    .hero p { max-width:560px; font-size:17px; line-height:1.8; color:#e6e8f2; }
+    .btn { padding:13px 22px; border-radius:999px; transition:transform .2s, box-shadow .2s; }
+    .btn:hover { transform:translateY(-2px); box-shadow:0 10px 25px rgba(0,0,0,.12); }
+    .btn-primary { background:var(--accent); color:#fff; }
+    .btn-ghost { border:1px solid rgba(255,255,255,.65); background:rgba(255,255,255,.08); }
+    .section { padding:62px 0; }
+    .section .title { margin-bottom:28px; }
+    .section h2 { font-family:Poppins,sans-serif; font-size:30px; letter-spacing:-.8px; margin:0 0 8px; }
+    .title p { margin:0; }
+    .categories { grid-template-columns:repeat(6,minmax(0,1fr)); gap:14px; }
+    .cat-card { cursor:pointer; border:1px solid #eceef5; border-radius:18px; padding:24px 14px; box-shadow:0 5px 18px rgba(26,30,55,.035); }
+    .cat-card .icon { width:56px;height:56px;margin:0 auto 12px;display:grid;place-items:center;border-radius:16px;background:#eeedff;color:var(--accent);font-size:25px; }
+    .cat-card:hover { transform:translateY(-4px); box-shadow:0 16px 30px rgba(26,30,55,.09); }
+    .products { grid-template-columns:repeat(4,minmax(0,1fr)); gap:22px; }
+    .product { position:relative; border:1px solid #eceef5; border-radius:20px; box-shadow:0 6px 22px rgba(26,30,55,.04); transition:transform .2s,box-shadow .2s; }
+    .product:hover { transform:translateY(-5px); box-shadow:0 18px 35px rgba(26,30,55,.1); }
+    .product img { height:230px; object-fit:contain; padding:18px; background:#f8f9fc; }
+    .product-body { padding:17px 18px; gap:12px; }
+    .product h5 { font-size:15px; line-height:1.45; }
+    .price { font-size:18px; }
+    .product-footer { padding:0 18px 18px; }
+    .add-btn { background:var(--primary); border-radius:11px; padding:12px; transition:background .2s; }
+    .add-btn:hover { background:var(--accent); }
+    .wish-btn { border-radius:11px; padding:10px 13px; border-color:#e8e9f1; }
+    .deal { background:#eeedff; border-radius:24px; gap:0; }
+    .deal img { width:48%; height:380px; }
+    .deal .content { padding:38px; }
+    .deal h3 { font:700 28px Poppins,sans-serif; letter-spacing:-.7px; }
+    .time-box { background:#171a2b; border-radius:12px; }
+    .newsletter { border-radius:24px; background:linear-gradient(135deg,#171a2b,#38316f); padding:46px 24px; }
+    .newsletter h3 { font:700 30px Poppins,sans-serif; margin:0 0 8px; }
+    .newsletter input { border:1px solid #e8e9f1; outline:none; }
+    .newsletter input:focus { box-shadow:0 0 0 3px rgba(99,91,255,.2); }
+    .testimonial { border:1px solid #eceef5; border-radius:18px; box-shadow:0 5px 18px rgba(26,30,55,.04); }
+    footer { border-top:1px solid #e9eaf2; background:#fff; }
+    @media(max-width:900px) {
+      .hero { margin:14px; min-height:420px; }
+      .hero .container { padding:42px 30px; }
+      .categories { grid-template-columns:repeat(3,1fr); }
+      .products { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .search { min-width:170px; }
+    }
+    @media(max-width:600px) {
+      .header-inner { flex-wrap:wrap; }
+      .header-inner > div:last-child { width:100%; }
+      .search { flex:1; min-width:0; }
+      .hero { min-height:390px; border-radius:20px; }
+      .hero .container { padding:34px 22px; }
+      .hero h1 { font-size:34px; letter-spacing:-1px; }
+      .hero p { font-size:15px; }
+      .section { padding:42px 0; }
+      .section h2 { font-size:25px; }
+      .categories { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .products { grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+      .product img { height:160px; padding:12px; }
+      .product-body { padding:12px; }
+      .product-footer { padding:0 12px 12px; }
+      .product h5 { font-size:13px; }
+      .deal .content { padding:24px; }
+      .timer { gap:7px; flex-wrap:wrap; }
+      .time-box { min-width:60px; padding:9px 10px; }
+    }
+
     </style>
 </head>
 
@@ -535,7 +624,7 @@
 
             <div style="display:flex;align-items:center;gap:14px;">
                 <div class="search" role="search" aria-label="Product search">
-                    <emnput type="search" id="searchInput" placeholder="Search products, categories..." aria-label="Search products" />
+                    <input type="search" id="searchInput" placeholder="Search products, categories..." aria-label="Search products" />
                     <button class="icon-btn" id="searchBtn" aria-label="Search"><em class="fas fa-search"></em></button>
                 </div>
 
@@ -570,7 +659,7 @@
         <!-- Hero -->
         <section class="hero" role="img" aria-label="Hero banner">
             <div class="container">
-                <h1>kiran Colletion — Premium Picks</h1>
+                <h1>Kiran Collection — Premium Picks</h1>
                 <p>Discover the latest trends in fashion, technology and accessories — curated just for you. Enjoy limited-time deals and free shipping on selected items.</p>
                 <div>
                     <button class="btn btn-primary" id="shopNow">Shop Now <em class="fas fa-arrow-right"></em></button>
@@ -607,7 +696,7 @@
             </div>
 
             <div class="deal" style="align-items:stretch;">
-                <emmg src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80" alt="Deal product">
+                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80" alt="Deal product">
                 <div class="content">
                     <h3>MacBook Air M2</h3>
                     <p class="muted">Thin, light and powerful — now with M2 performance.</p>
@@ -656,7 +745,7 @@
                     <div class="rating">★★★★★</div>
                     <p>"Fast shipping and excellent customer support. The product exceeded my expectations!"</p>
                     <div style="display:flex;align-items:center;gap:10px">
-                        <emmg src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&q=80" alt="avatar" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=80&q=80" alt="avatar" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
                         <div>
                             <div style="font-weight:700">Ava Martin</div>
                             <div class="muted" style="font-size:13px">Verified buyer</div>
@@ -668,7 +757,7 @@
                     <div class="rating">★★★★☆</div>
                     <p>"Great selection and the checkout was smooth. Will shop again."</p>
                     <div style="display:flex;align-items:center;gap:10px">
-                        <emmg src="https://images.unsplash.com/photo-1546456073-6712f79251bb?auto=format&fit=crop&w=80&q=80" alt="avatar" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
+                        <img src="https://images.unsplash.com/photo-1546456073-6712f79251bb?auto=format&fit=crop&w=80&q=80" alt="avatar" style="width:40px;height:40px;border-radius:50%;object-fit:cover">
                         <div>
                             <div style="font-weight:700">Michael Lee</div>
                             <div class="muted" style="font-size:13px">Frequent buyer</div>
@@ -684,7 +773,7 @@
                 <h3 id="news-title">Stay in the loop</h3>
                 <p>Subscribe to get exclusive offers & new arrivals</p>
                 <form id="newsletterForm" style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap;" onsubmit="return false;">
-                    <emnput id="newsletterEmail" type="email" placeholder="Enter your email" aria-label="Email address" required>
+                    <input id="newsletterEmail" type="email" placeholder="Enter your email" aria-label="Email address" required>
                     <button class="btn btn-primary" id="subscribeBtn">Subscribe</button>
                 </form>
                 <div id="newsletterMsg" style="margin-top:10px;font-size:14px;display:none"></div>
@@ -869,7 +958,7 @@
                 el.className = 'product';
                 el.innerHTML = `
                     ${p.badge ? `<div style="position:absolute;margin:12px"><span style="background:${p.badge.startsWith('-')? '#ff4757' : 'var(--success)'};color:white;padding:6px 8px;border-radius:8px;font-weight:700;font-size:12px">${p.badge}</span></div>` : ''}
-                    <emmg src="${p.img}" alt="${escapeHtml(p.title)}">
+                    <img src="${p.img}" alt="${escapeHtml(p.title)}">
                     <div class="product-body">
                         <h5>${escapeHtml(p.title)}</h5>
                         <div class="muted">${p.category}</div>
